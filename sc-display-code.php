@@ -9,7 +9,7 @@
  * License: GPL2
  */
 
- // Basic Security.
+// Basic Security.
 defined( 'ABSPATH' ) or die;
 
 /**
@@ -35,10 +35,10 @@ add_action( 'wp_head', 'sc_add_display_highlighter' );
  */
 function sc_my_post_type () {
 	register_post_type(
-		'code',
+		'sc_code_snippet',
 		array(
 			'labels'       => array(
-				'name' => 'Code'
+				'name' => 'Code Snippet'
 			),
 			'public'       => true,
 			'menu_icon'    => 'dashicons-editor-code',
