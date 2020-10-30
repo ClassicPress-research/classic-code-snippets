@@ -9,6 +9,9 @@
  * License: GPL2
  */
 
+ // Basic Security.
+defined( 'ABSPATH' ) or die;
+
 /**
  * Add display highlighter and line number styling to head section.
  *
