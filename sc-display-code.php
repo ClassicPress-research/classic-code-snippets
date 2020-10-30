@@ -38,7 +38,7 @@ function sc_my_post_type () {
 
 	$labels = array(
 		'name'                  => __( 'Code Snippets', 'sc-display-code' ),
-        'singular_name'         => __( 'Code Snippet', 'sc-display-code' ),
+		'singular_name'         => __( 'Code Snippet', 'sc-display-code' ),
         'menu_name'             => __( 'Code Snippets', 'sc-display-code' ),
         'name_admin_bar'        => __( 'Code Snippet', 'sc-display-code' ),
         'add_new'               => __( 'Add New', 'sc-display-code' ),
