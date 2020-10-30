@@ -7,6 +7,7 @@
  * Author: Simply Computing
  * Author URI: https://simplycomputing.com.au
  * License: GPL2
+ * text-domain: sc-display-code
  */
 
 // Basic Security.
@@ -34,12 +35,34 @@ add_action( 'wp_head', 'sc_add_display_highlighter' );
  * @return void
  */
 function sc_my_post_type () {
+
+	$labels = array(
+		'name'                  => _x( 'Code Snippets', 'Post type general name', 'sc-display-code' ),
+        'singular_name'         => _x( 'Code Snippet', 'Post type singular name', 'sc-display-code' ),
+        'menu_name'             => _x( 'Code Snippets', 'Admin Menu text', 'sc-display-code' ),
+        'name_admin_bar'        => _x( 'Code Snippet', 'Add New on Toolbar', 'sc-display-code' ),
+        'add_new'               => __( 'Add New', 'sc-display-code' ),
+        'add_new_item'          => __( 'Add New Code Snippet', 'sc-display-code' ),
+        'new_item'              => __( 'New Code Snippet', 'sc-display-code' ),
+        'edit_item'             => __( 'Edit Code Snippet', 'sc-display-code' ),
+        'view_item'             => __( 'View Code Snippet', 'sc-display-code' ),
+        'all_items'             => __( 'All Code Snippets', 'sc-display-code' ),
+        'search_items'          => __( 'Search Code Snippets', 'sc-display-code' ),
+        'parent_item_colon'     => __( 'Parent Code Snippets:', 'sc-display-code' ),
+        'not_found'             => __( 'No Code Snippets found.', 'sc-display-code' ),
+        'not_found_in_trash'    => __( 'No Code Snippets found in Trash.', 'sc-display-code' ),
+        'featured_image'        => _x( 'Code Snippet Cover Image', 'Overrides the "Featured Image" phrase for this post type.', 'sc-display-code' ),
+        'set_featured_image'    => _x( 'Set cover image', 'Overrides the "Set featured image" phrase for this post type.', 'sc-display-code' ),
+        'archives'              => _x( 'Code Snippet archives', 'The post type archive label used in nav menus. Default "Post Archives".', 'sc-display-code' ),
+        'filter_items_list'     => _x( 'Filter Code Snippets list', 'Screen reader text for the filter links heading on the post type listing screen. Default "Filter posts list"/"Filter pages list".', 'sc-display-code' ),
+        'items_list_navigation' => _x( 'Code Snippets list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default "Posts list navigation"/"Pages list navigation".', 'sc-display-code' ),
+        'items_list'            => _x( 'Code Snippets list', 'Screen reader text for the items list heading on the post type listing screen. Default "Posts list"/"Pages list".', 'sc-display-code' ),
+	);
+
 	register_post_type(
 		'sc_code_snippet',
 		array(
-			'labels'       => array(
-				'name' => 'Code Snippet'
-			),
+			'labels'       => $labels,
 			'public'       => true,
 			'menu_icon'    => 'dashicons-editor-code',
 			'show_in_menu' => true,
@@ -57,9 +80,9 @@ add_action( 'init', 'sc_my_post_type' );
 function sc_register_meta_boxes() {
 	add_meta_box(
 		'hcf-1',
-		__( 'Code Snippet', 'hcf' ),
+		__( 'Code Snippet', 'sc-display-code' ),
 		'sc_display_callback',
-		'code'
+		'sc_code_snippet'
 	);
 }
 add_action( 'add_meta_boxes', 'sc_register_meta_boxes' );
@@ -138,7 +161,7 @@ add_shortcode('snippet', 'shortcode_function');
  * @return void
  */
 function create_code_text_file( $post_id ) {
-	if ( get_post_meta( $post_id, 'sc_code_snippet', true) ) {
+	if ( get_post_meta( $post_id, 'sc_code_snippet', true ) ) {
 		$post_meta_value = get_post_meta( $post_id, 'sc_code_snippet', true );
 		$handle          = fopen( "/home/classicc/public_html/wp-content/downloads/code/" . $post_id . ".txt", "w+" );
 		
