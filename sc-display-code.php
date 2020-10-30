@@ -37,10 +37,10 @@ add_action( 'wp_head', 'sc_add_display_highlighter' );
 function sc_my_post_type () {
 
 	$labels = array(
-		'name'                  => _x( 'Code Snippets', 'Post type general name', 'sc-display-code' ),
-        'singular_name'         => _x( 'Code Snippet', 'Post type singular name', 'sc-display-code' ),
-        'menu_name'             => _x( 'Code Snippets', 'Admin Menu text', 'sc-display-code' ),
-        'name_admin_bar'        => _x( 'Code Snippet', 'Add New on Toolbar', 'sc-display-code' ),
+		'name'                  => __( 'Code Snippets', 'sc-display-code' ),
+        'singular_name'         => __( 'Code Snippet', 'sc-display-code' ),
+        'menu_name'             => __( 'Code Snippets', 'sc-display-code' ),
+        'name_admin_bar'        => __( 'Code Snippet', 'sc-display-code' ),
         'add_new'               => __( 'Add New', 'sc-display-code' ),
         'add_new_item'          => __( 'Add New Code Snippet', 'sc-display-code' ),
         'new_item'              => __( 'New Code Snippet', 'sc-display-code' ),
@@ -51,12 +51,12 @@ function sc_my_post_type () {
         'parent_item_colon'     => __( 'Parent Code Snippets:', 'sc-display-code' ),
         'not_found'             => __( 'No Code Snippets found.', 'sc-display-code' ),
         'not_found_in_trash'    => __( 'No Code Snippets found in Trash.', 'sc-display-code' ),
-        'featured_image'        => _x( 'Code Snippet Cover Image', 'Overrides the "Featured Image" phrase for this post type.', 'sc-display-code' ),
-        'set_featured_image'    => _x( 'Set cover image', 'Overrides the "Set featured image" phrase for this post type.', 'sc-display-code' ),
-        'archives'              => _x( 'Code Snippet archives', 'The post type archive label used in nav menus. Default "Post Archives".', 'sc-display-code' ),
-        'filter_items_list'     => _x( 'Filter Code Snippets list', 'Screen reader text for the filter links heading on the post type listing screen. Default "Filter posts list"/"Filter pages list".', 'sc-display-code' ),
-        'items_list_navigation' => _x( 'Code Snippets list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default "Posts list navigation"/"Pages list navigation".', 'sc-display-code' ),
-        'items_list'            => _x( 'Code Snippets list', 'Screen reader text for the items list heading on the post type listing screen. Default "Posts list"/"Pages list".', 'sc-display-code' ),
+        'featured_image'        => __( 'Code Snippet Cover Image', 'sc-display-code' ),
+        'set_featured_image'    => __( 'Set cover image', 'sc-display-code' ),
+        'archives'              => __( 'Code Snippet archives', 'sc-display-code' ),
+        'filter_items_list'     => __( 'Filter Code Snippets list', 'sc-display-code' ),
+        'items_list_navigation' => __( 'Code Snippets list navigation', 'sc-display-code' ),
+        'items_list'            => __( 'Code Snippets list', 'sc-display-code' ),
 	);
 
 	register_post_type(
