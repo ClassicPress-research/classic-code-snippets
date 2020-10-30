@@ -134,22 +134,24 @@ function shortcode_function($atts) {
 	$myVar = htmlspecialchars($post_meta_value, ENT_QUOTES); 
 
 	return '
-	<pre><code class="language-php">' . $myVar  . '</code></pre>
+	<pre>
+		<code class="language-php">' . $myVar  . '</code>
+	</pre>
 	<button id="copy-button" class="cc-button" onclick="copyToClipboard()">Copy to Clipboard</button>
 	<a href="/wp-content/downloads/code/' . $post_id . '.txt" class="cc-button">View Raw</a>
 	<span style="float:right;color:#999;"><small>' . $codeID . '</small></span>
 	<script>
-	var copyButton = document.getElementById("copy-button");
-	function copyToClipboard () {
-	var clipText = `' . $post_meta_value . '`;
-	navigator.clipboard.writeText(clipText).then(function() {
-	console.log("Copied to clipboard.");
-	copyButton.innerHTML = "Copied";
-	}, function() {
-	console.log("Copy failed.");
-	copyButton.innerHTML = "Copy Failed";
-	});
-	}
+		var copyButton = document.getElementById("copy-button");
+		function copyToClipboard () {
+			var clipText = `' . $post_meta_value . '`;
+			navigator.clipboard.writeText(clipText).then(function() {
+				console.log("Copied to clipboard.");
+				copyButton.innerHTML = "Copied";
+			}, function() {
+				console.log("Copy failed.");
+				copyButton.innerHTML = "Copy Failed";
+			});
+		}
 	</script>';
 }
 add_shortcode('snippet', 'shortcode_function');
