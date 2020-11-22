@@ -1,13 +1,16 @@
 <?php
 /**
- * Plugin Name: SC Display Code
- * Plugin URI: https://simplycomputing.com.au
+ * Plugin Name: Classic Display Code
+ * Plugin URI: https://github.com/classicpress-research/classic-code-snippet
  * Description: A small plugin to generate a shortcode to display code on a page.
  * Version: 1.0.0
- * Author: Simply Computing
- * Author URI: https://simplycomputing.com.au
+ * Author: ClassicPress Research Team
+ * Author URI: https://github.com/classicpress-research/classic-code-snippet
  * License: GPL2
  * text-domain: ccs-code-snippet
+ * 
+ * Credits: Simply Computing (https://simplycomputing.com.au)
+ * Classic Code Snippets is the new name for SC Display Code (sc-display-code) originally developed by Alan and Jack Coggins at Simply Computing.
  */
 
 // Basic Security.
