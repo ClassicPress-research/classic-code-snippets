@@ -7,7 +7,7 @@
  * Author: Simply Computing
  * Author URI: https://simplycomputing.com.au
  * License: GPL2
- * text-domain: sc-display-code
+ * text-domain: ccs-code-snippet
  */
 
 // Basic Security.
@@ -37,26 +37,26 @@ add_action( 'wp_head', 'sc_add_display_highlighter' );
 function sc_my_post_type () {
 
 	$labels = array(
-		'name'                  => __( 'Code Snippets', 'sc-display-code' ),
-		'singular_name'         => __( 'Code Snippet', 'sc-display-code' ),
-        'menu_name'             => __( 'Code Snippets', 'sc-display-code' ),
-        'name_admin_bar'        => __( 'Code Snippet', 'sc-display-code' ),
-        'add_new'               => __( 'Add New', 'sc-display-code' ),
-        'add_new_item'          => __( 'Add New Code Snippet', 'sc-display-code' ),
-        'new_item'              => __( 'New Code Snippet', 'sc-display-code' ),
-        'edit_item'             => __( 'Edit Code Snippet', 'sc-display-code' ),
-        'view_item'             => __( 'View Code Snippet', 'sc-display-code' ),
-        'all_items'             => __( 'All Code Snippets', 'sc-display-code' ),
-        'search_items'          => __( 'Search Code Snippets', 'sc-display-code' ),
-        'parent_item_colon'     => __( 'Parent Code Snippets:', 'sc-display-code' ),
-        'not_found'             => __( 'No Code Snippets found.', 'sc-display-code' ),
-        'not_found_in_trash'    => __( 'No Code Snippets found in Trash.', 'sc-display-code' ),
-        'featured_image'        => __( 'Code Snippet Cover Image', 'sc-display-code' ),
-        'set_featured_image'    => __( 'Set cover image', 'sc-display-code' ),
-        'archives'              => __( 'Code Snippet archives', 'sc-display-code' ),
-        'filter_items_list'     => __( 'Filter Code Snippets list', 'sc-display-code' ),
-        'items_list_navigation' => __( 'Code Snippets list navigation', 'sc-display-code' ),
-        'items_list'            => __( 'Code Snippets list', 'sc-display-code' ),
+		'name'                  => __( 'Code Snippets', 'ccs-code-snippet' ),
+		'singular_name'         => __( 'Code Snippet', 'ccs-code-snippet' ),
+        'menu_name'             => __( 'Code Snippets', 'ccs-code-snippet' ),
+        'name_admin_bar'        => __( 'Code Snippet', 'ccs-code-snippet' ),
+        'add_new'               => __( 'Add New', 'ccs-code-snippet' ),
+        'add_new_item'          => __( 'Add New Code Snippet', 'ccs-code-snippet' ),
+        'new_item'              => __( 'New Code Snippet', 'ccs-code-snippet' ),
+        'edit_item'             => __( 'Edit Code Snippet', 'ccs-code-snippet' ),
+        'view_item'             => __( 'View Code Snippet', 'ccs-code-snippet' ),
+        'all_items'             => __( 'All Code Snippets', 'ccs-code-snippet' ),
+        'search_items'          => __( 'Search Code Snippets', 'ccs-code-snippet' ),
+        'parent_item_colon'     => __( 'Parent Code Snippets:', 'ccs-code-snippet' ),
+        'not_found'             => __( 'No Code Snippets found.', 'ccs-code-snippet' ),
+        'not_found_in_trash'    => __( 'No Code Snippets found in Trash.', 'ccs-code-snippet' ),
+        'featured_image'        => __( 'Code Snippet Cover Image', 'ccs-code-snippet' ),
+        'set_featured_image'    => __( 'Set cover image', 'ccs-code-snippet' ),
+        'archives'              => __( 'Code Snippet archives', 'ccs-code-snippet' ),
+        'filter_items_list'     => __( 'Filter Code Snippets list', 'ccs-code-snippet' ),
+        'items_list_navigation' => __( 'Code Snippets list navigation', 'ccs-code-snippet' ),
+        'items_list'            => __( 'Code Snippets list', 'ccs-code-snippet' ),
 	);
 
 	register_post_type(
@@ -80,7 +80,7 @@ add_action( 'init', 'sc_my_post_type' );
 function sc_register_meta_boxes() {
 	add_meta_box(
 		'hcf-1',
-		__( 'Code Snippet', 'sc-display-code' ),
+		__( 'Code Snippet', 'ccs-code-snippet' ),
 		'sc_display_callback',
 		'sc_code_snippet'
 	);
