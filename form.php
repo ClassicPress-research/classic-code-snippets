@@ -1,18 +1,17 @@
-<div class="sc_box">
+<div class="ccs_box">
     <style scoped>
-        .sc_box{
+        .ccs_box{
             display: grid;
             grid-template-columns: max-content 1fr;
             grid-row-gap: 10px;
             grid-column-gap: 20px;
         }
-        .sc_field{
+        .ccs_field{
             display: contents;
         }
     </style>
-    <p class="meta-options sc_field">
-        <label for="sc_code_snippet">Code</label>
-        <textarea id="sc_code_snippet" type="text" rows="30" name="sc_code_snippet"><?php echo esc_attr( get_post_meta( get_the_ID(), 'sc_code_snippet', true ) ); ?></textarea>
+    <p class="meta-options ccs_field">
+        <label for="ccs_code_snippet"><?php esc_attr_e( 'Code Snippet', 'ccs-code-snippet'); ?></label>
+        <textarea id="ccs_code_snippet" type="text" rows="30" name="ccs_code_snippet"><?php echo esc_attr( get_post_meta( get_the_ID(), 'ccs_code_snippet', true ) ); ?></textarea>
     </p>
 </div>
-
