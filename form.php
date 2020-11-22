@@ -11,7 +11,7 @@
         }
     </style>
     <p class="meta-options ccs_field">
-        <label for="ccs_code_snippet">Code Snippet</label>
+        <label for="ccs_code_snippet"><?php esc_attr_e( 'Code Snippet', 'ccs-code-snippet'); ?></label>
         <textarea id="ccs_code_snippet" type="text" rows="30" name="ccs_code_snippet"><?php echo esc_attr( get_post_meta( get_the_ID(), 'ccs_code_snippet', true ) ); ?></textarea>
     </p>
 </div>
