@@ -16,6 +16,9 @@
 // Basic Security.
 defined( 'ABSPATH' ) or die;
 
+// Load the Update Client to manage updates.
+require_once('includes/UpdateClient.class.php');
+
 /**
  * Add display highlighter and line number styling to head section.
  *
