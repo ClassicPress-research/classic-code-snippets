@@ -187,7 +187,7 @@ add_action( 'manage_posts_custom_column', 'ccs_custom_id_columns', 5, 2 );
  * @return $defaults.
  */
 function ccs_columns_id( $defaults ){
-    $defaults['wps_post_id'] = __('Shortcode');
+    $defaults['ccs_post_id'] = __('Shortcode');
     return $defaults;
 }
 
@@ -199,7 +199,7 @@ function ccs_columns_id( $defaults ){
  * @return void
  */
 function ccs_custom_id_columns( $column_name, $post_id ){
-    if($column_name === 'wps_post_id'){
+    if($column_name === 'ccs_post_id'){
             echo '[css_snippets id=' . $post_id . ']';
     }
 }
