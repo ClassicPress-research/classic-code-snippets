@@ -69,7 +69,7 @@ function sc_my_post_type () {
 			'public'       => true,
 			'menu_icon'    => 'dashicons-editor-code',
 			'show_in_menu' => true,
-			'supports'     => 'title',
+			'supports'     => array( 'title' ),
 		)
 	);
 }
