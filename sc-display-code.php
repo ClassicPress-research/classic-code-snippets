@@ -72,7 +72,7 @@ function sc_my_post_type () {
 			'public'       => true,
 			'menu_icon'    => 'dashicons-editor-code',
 			'show_in_menu' => true,
-			'supports'     => 'title',
+			'supports'     => array( 'title' ),
 		)
 	);
 }
@@ -178,3 +178,31 @@ function create_code_text_file( $post_id ) {
 	}
 }
 add_action( 'save_post', 'create_code_text_file' );
+
+// Add simple copy-paste code for the post/pages in columns.
+add_filter( 'manage_posts_columns', 'ccs_columns_id', 5 );
+add_action( 'manage_posts_custom_column', 'ccs_custom_id_columns', 5, 2 );
+
+/**
+ * Add shortcode display column
+ *
+ * @param array $defaults Default data from function.
+ * @return $defaults.
+ */
+function ccs_columns_id( $defaults ){
+    $defaults['ccs_post_id'] = __('Shortcode');
+    return $defaults;
+}
+
+/**
+ * Populate custom column with post/page shortcode.
+ *
+ * @param array $column_name Column Names.
+ * @param int $post_id Post ID.
+ * @return void
+ */
+function ccs_custom_id_columns( $column_name, $post_id ){
+    if($column_name === 'ccs_post_id'){
+            echo '[css_snippets id=' . $post_id . ']';
+    }
+}
