@@ -11,7 +11,7 @@
         }
     </style>
     <p class="meta-options ccs_field">
-        <label for="ccs_code_snippet"><?php esc_attr_e( 'Snippet to paste in post/page', 'ccs-code-snippet'); ?></label>
+        <label for="ccs_code_snippet"><?php esc_attr_e( 'Insert snippet in post/page using', 'ccs-code-snippet'); ?></label>
         <input id="ccs_code_snippet" type="text" name="ccs_code_snippet" value="<?php echo '[css_snippets id=' . get_the_ID() . ']'; ?>" />
     </p>
     <p class="meta-options ccs_field">
