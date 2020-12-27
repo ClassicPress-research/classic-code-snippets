@@ -202,7 +202,6 @@ function ccs_code_snippet_raw_code() {
 
 add_action( 'template_redirect', 'ccs_code_snippet_raw_code' );
 
-
 // Add simple copy-paste code for the post/pages in columns.
 add_filter( 'manage_posts_columns', 'ccs_columns_id', 5 );
 add_action( 'manage_posts_custom_column', 'ccs_custom_id_columns', 5, 2 );
