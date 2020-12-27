@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) or die;
  */
 function ccs_enqueue_scripts() {
 	global $post;
-    if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'ccs_snippet') ) {
+	if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'ccs_snippet') ) {
 		wp_enqueue_style( 'highlight-style', '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/default.min.css' );
 		wp_enqueue_script( 'highlight-script', '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js', array(), '10.1.2', true );
 		wp_enqueue_script( 'highlight-num-script', 'https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js', array(), '2.8.0', true );
@@ -119,8 +119,8 @@ function ccs_display_callback( $post ) {
 function ccs_save_custom_fields( $post_id ){
 
 	// Escape on autosave of the post.
-    if ( wp_is_post_autosave( $post_id ) || wp_is_post_revision( $post_id ) ) {
-        return;
+	if ( wp_is_post_autosave( $post_id ) || wp_is_post_revision( $post_id ) ) {
+		return;
 	}
 	
 	// Update the code snippet.
@@ -195,7 +195,7 @@ function ccs_code_snippet_raw_code() {
 		header( "Content-Type: text/plain", true, 200 );
 		$ccs_code_snippet = get_post_meta( $post_id, 'ccs_code_snippet', true );
 		echo $ccs_code_snippet;
-        exit();
+		exit();
 	}
 
 }
@@ -213,8 +213,8 @@ add_action( 'manage_posts_custom_column', 'ccs_custom_id_columns', 5, 2 );
  * @return $defaults.
  */
 function ccs_columns_id( $defaults ){
-    $defaults['ccs_post_id'] = __('Shortcode');
-    return $defaults;
+	$defaults['ccs_post_id'] = __('Shortcode');
+	return $defaults;
 }
 
 /**
@@ -225,9 +225,9 @@ function ccs_columns_id( $defaults ){
  * @return void
  */
 function ccs_custom_id_columns( $column_name, $post_id ){
-    if($column_name === 'ccs_post_id'){
-            echo '[css_snippets id=' . $post_id . ']';
-    }
+	if( $column_name === 'ccs_post_id' ){
+		echo '[css_snippets id=' . $post_id . ']';
+	}
 }
 
 /**
@@ -236,8 +236,8 @@ function ccs_custom_id_columns( $column_name, $post_id ){
  * @return void
  */
 function ccs_flush_rewrite_rules() {
-    ccs_create_custom_post_type();
-    flush_rewrite_rules();
+	ccs_create_custom_post_type();
+	flush_rewrite_rules();
 }
 
 register_activation_hook( __FILE__, 'ccs_flush_rewrite_rules' );
