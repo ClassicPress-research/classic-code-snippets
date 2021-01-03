@@ -101,7 +101,7 @@ function ccs_display_callback( $post ) {
 	$ccs_code_snippet = get_post_meta( get_the_ID(), 'ccs_code_snippet', true );
 	?>
 	<p class="ccs-meta-options">
-		<label for="ccs_code_snippet"><?php esc_attr_e( 'Insert snippet in post/page using', 'ccs-code-snippet'); ?></label>
+		<label for="ccs_shortcode"><?php esc_attr_e( 'Insert snippet in post/page using', 'ccs-code-snippet'); ?></label>
 		<input id="ccs_shortcode" type="text" name="ccs_shortcode" value="<?php echo '[ccs_snippet id=' . get_the_ID() . ']'; ?>" />
 	</p>
 	<p class="ccs-meta-options">
