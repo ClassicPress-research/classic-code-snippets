@@ -124,8 +124,8 @@ function ccs_save_custom_fields( $post_id ){
 	}
 	
 	// Update the code snippet.
-	if ( $post_id ) {
-		update_post_meta( $post_id, "ccs_code_snippet", @$_POST["ccs_code_snippet"] );
+	if ( array_key_exists('ccs_code_snippet', $_POST ) ) {
+		update_post_meta( $post_id, 'ccs_code_snippet', $_POST['ccs_code_snippet'] );
 	}
 
 }
