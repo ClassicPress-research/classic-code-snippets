@@ -226,7 +226,7 @@ function ccs_columns_id( $defaults ){
  */
 function ccs_custom_id_columns( $column_name, $post_id ){
 	if( $column_name === 'ccs_post_id' ){
-		echo '[css_snippet id=' . $post_id . ']';
+		echo '[ccs_snippet id=' . $post_id . ']';
 	}
 }
 
