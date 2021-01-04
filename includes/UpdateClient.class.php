@@ -720,8 +720,8 @@ class UpdateClient {
 		}
 
 		// Set path and URL to this plugin's own images directory.
-		$image_path = untrailingslashit(WP_PLUGIN_DIR).'/'.$plugin.'/images';
-		$image_url  = untrailingslashit(WP_PLUGIN_URL).'/'.$plugin.'/images';
+		$image_path = untrailingslashit(WP_PLUGIN_DIR).'/'.$plugin.'/assets/images';
+		$image_url  = untrailingslashit(WP_PLUGIN_URL).'/'.$plugin.'/assets/images';
 
 		// Allow directory location to be filtered.
 		$image_path = apply_filters('codepotent_update_manager_image_path', $image_path);
