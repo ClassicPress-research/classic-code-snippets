@@ -2,12 +2,12 @@
 /**
  * Plugin Name: Classic Code Snippets
  * Plugin URI: https://github.com/classicpress-research/classic-code-snippets
- * Description: Use a shortcode like [ccs_code_snippet id=19] to display code snippet on a page or post.
+ * Description: Use a shortcode like [ccs_snippet id=19] to display code snippet on a page or post.
  * Version: 1.0.0
  * Author: ClassicPress Research Team
  * Author URI: https://github.com/classicpress-research/classic-code-snippets
  * License: GPL2
- * text-domain: ccs-code-snippet
+ * text-domain: ccs-code-snippets
  * 
  * Credits: Simply Computing (https://simplycomputing.com.au)
  * Classic Code Snippets is the new name for SC Display Code (sc-display-code) originally developed by Alan and Jack Coggins at Simply Computing.
@@ -41,26 +41,26 @@ add_action( 'wp_enqueue_scripts', 'ccs_enqueue_scripts' );
 function ccs_create_custom_post_type () {
 
 	$labels = array(
-		'name'                  => __( 'Code Snippets', 'ccs-code-snippet' ),
-		'singular_name'         => __( 'Code Snippet', 'ccs-code-snippet' ),
-		'menu_name'             => __( 'Code Snippets', 'ccs-code-snippet' ),
-		'name_admin_bar'        => __( 'Code Snippet', 'ccs-code-snippet' ),
-		'add_new'               => __( 'Add New', 'ccs-code-snippet' ),
-		'add_new_item'          => __( 'Add New Code Snippet', 'ccs-code-snippet' ),
-		'new_item'              => __( 'New Code Snippet', 'ccs-code-snippet' ),
-		'edit_item'             => __( 'Edit Code Snippet', 'ccs-code-snippet' ),
-		'view_item'             => __( 'View Code Snippet', 'ccs-code-snippet' ),
-		'all_items'             => __( 'All Code Snippets', 'ccs-code-snippet' ),
-		'search_items'          => __( 'Search Code Snippets', 'ccs-code-snippet' ),
-		'parent_item_colon'     => __( 'Parent Code Snippets:', 'ccs-code-snippet' ),
-		'not_found'             => __( 'No Code Snippets found.', 'ccs-code-snippet' ),
-		'not_found_in_trash'    => __( 'No Code Snippets found in Trash.', 'ccs-code-snippet' ),
-		'featured_image'        => __( 'Code Snippet Cover Image', 'ccs-code-snippet' ),
-		'set_featured_image'    => __( 'Set cover image', 'ccs-code-snippet' ),
-		'archives'              => __( 'Code Snippet archives', 'ccs-code-snippet' ),
-		'filter_items_list'     => __( 'Filter Code Snippets list', 'ccs-code-snippet' ),
-		'items_list_navigation' => __( 'Code Snippets list navigation', 'ccs-code-snippet' ),
-		'items_list'            => __( 'Code Snippets list', 'ccs-code-snippet' ),
+		'name'                  => __( 'Code Snippets', 'ccs-code-snippets' ),
+		'singular_name'         => __( 'Code Snippet', 'ccs-code-snippets' ),
+		'menu_name'             => __( 'Code Snippets', 'ccs-code-snippets' ),
+		'name_admin_bar'        => __( 'Code Snippet', 'ccs-code-snippets' ),
+		'add_new'               => __( 'Add New', 'ccs-code-snippets' ),
+		'add_new_item'          => __( 'Add New Code Snippet', 'ccs-code-snippets' ),
+		'new_item'              => __( 'New Code Snippet', 'ccs-code-snippets' ),
+		'edit_item'             => __( 'Edit Code Snippet', 'ccs-code-snippets' ),
+		'view_item'             => __( 'View Code Snippet', 'ccs-code-snippets' ),
+		'all_items'             => __( 'All Code Snippets', 'ccs-code-snippets' ),
+		'search_items'          => __( 'Search Code Snippets', 'ccs-code-snippets' ),
+		'parent_item_colon'     => __( 'Parent Code Snippets:', 'ccs-code-snippets' ),
+		'not_found'             => __( 'No Code Snippets found.', 'ccs-code-snippets' ),
+		'not_found_in_trash'    => __( 'No Code Snippets found in Trash.', 'ccs-code-snippets' ),
+		'featured_image'        => __( 'Code Snippet Cover Image', 'ccs-code-snippets' ),
+		'set_featured_image'    => __( 'Set cover image', 'ccs-code-snippets' ),
+		'archives'              => __( 'Code Snippet archives', 'ccs-code-snippets' ),
+		'filter_items_list'     => __( 'Filter Code Snippets list', 'ccs-code-snippets' ),
+		'items_list_navigation' => __( 'Code Snippets list navigation', 'ccs-code-snippets' ),
+		'items_list'            => __( 'Code Snippets list', 'ccs-code-snippets' ),
 	);
 
 	register_post_type(
@@ -84,7 +84,7 @@ add_action( 'init', 'ccs_create_custom_post_type' );
 function ccs_register_meta_boxes() {
 	add_meta_box(
 		'ccs-code-snippets-metabox',
-		__( 'Code Snippet Details', 'ccs-code-snippet' ),
+		__( 'Code Snippet Details', 'ccs-code-snippets' ),
 		'ccs_display_callback',
 		'ccs_code_snippet'
 	);
@@ -101,11 +101,11 @@ function ccs_display_callback( $post ) {
 	$ccs_code_snippet = get_post_meta( get_the_ID(), 'ccs_code_snippet', true );
 	?>
 	<p class="ccs-meta-options">
-		<label for="ccs_shortcode"><?php esc_attr_e( 'Insert snippet in post/page using', 'ccs-code-snippet'); ?></label>
+		<label for="ccs_shortcode"><?php esc_attr_e( 'Insert snippet in post/page using', 'ccs-code-snippets'); ?></label>
 		<input id="ccs_shortcode" type="text" name="ccs_shortcode" value="<?php echo '[ccs_snippet id=' . get_the_ID() . ']'; ?>" />
 	</p>
 	<p class="ccs-meta-options">
-		<label for="ccs_code_snippet screen-reader-text"><?php echo esc_attr( 'Code Snippet', 'ccs-code-snippet'); ?></label><br>
+		<label for="ccs_code_snippet screen-reader-text"><?php echo esc_attr( 'Code Snippet', 'ccs-code-snippets'); ?></label><br>
 		<textarea id="ccs_code_snippet" rows="20" class="widefat" name="ccs_code_snippet"><?php echo esc_attr( $ccs_code_snippet ); ?></textarea>
 	</p>
 	<?php
@@ -213,7 +213,7 @@ add_action( 'manage_posts_custom_column', 'ccs_custom_id_columns', 5, 2 );
  * @return $defaults.
  */
 function ccs_columns_id( $defaults ){
-	$defaults['ccs_post_id'] = __('Shortcode');
+	$defaults['ccs_post_id'] = __( 'Shortcode', 'ccs-code-snippets' );
 	return $defaults;
 }
 
