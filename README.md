@@ -8,7 +8,7 @@ Classic Code Snippets is a fork of SC Display Code (sc-display-code) originally 
 ## How it works.
 The plugin uses highlight.js to provide syntax highlighting.
 
-Code snippets are saved or edited in the custom post type `ccs_code_snippets`. The plugin uses a shortcode like [ccs_code_snippet id=19] to display the code snippet on a page or post.
+Code snippets are saved or edited in the custom post type `ccs_snippet`. The plugin uses a shortcode like [ccs_snippet id=19] to display the code snippet on a page or post.
 
 ## How to use.
 - Download the plugin zip
